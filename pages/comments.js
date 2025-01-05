@@ -21,7 +21,7 @@ const Comments = () => {
     fetchComments();
 
     socket.on('new-comment', (comment) => {
-      setComments((prev) => [comment, ...prev]);
+      setComments((prev) => [...prev,comment]);
     });
 
     return () => socket.off('new-comment');
